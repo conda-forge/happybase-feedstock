@@ -7,7 +7,7 @@ package:
 source:
   fn: happybase-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/h/happybase/happybase-{{ version }}.tar.gz
-  md5: 0d9ca6e22a7edb03ccd75e99d0acf1ea
+  sha256: 744e342936f6c9e384b203435c38ff21a339626a0d7c11aa177988b5e164ef2a
 
 build:
   skip: True  # [py3k]
