@@ -1,18 +1,23 @@
-{% set version = "0.9" %}
+{%set name = "happybase" %}
+{%set version = "0.9" %}
+{%set compress_type = "tar.gz" %}
+{%set hash_type = "sha256" %}
+{%set hash_val = "744e342936f6c9e384b203435c38ff21a339626a0d7c11aa177988b5e164ef2a" %}
+{%set build_num = "1" %}
 
 package:
-  name: happybase
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: happybase-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/h/happybase/happybase-{{ version }}.tar.gz
-  sha256: 744e342936f6c9e384b203435c38ff21a339626a0d7c11aa177988b5e164ef2a
+  fn: {{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
+  {{ hash_type }}: {{ hash_val }}
 
 build:
   skip: True  # [py3k]
 
-  number: 0
+  number: {{ build_num }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -22,25 +27,20 @@ requirements:
 
   run:
     - python
-    - thrift
-    - thriftpy >=0.3.7
+    - thrift >=0.8.0
 
 test:
   imports:
     - happybase
 
-  commands:
-    - nosetests
-
-  requires:
-    - coverage
-    - nose
-    - sphinx
-
 about:
   home: https://github.com/wbolster/happybase
   license: MIT License
+  license_file: LICENSE.rst
+  license_family: MIT
   summary: 'A developer-friendly Python library to interact with Apache HBase'
+  dev_url: https://github.com/wbolster/happybase
+  doc_url: https://happybase.readthedocs.io
 
 extra:
   recipe-maintainers:
