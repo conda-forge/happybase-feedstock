@@ -1,9 +1,9 @@
 {%set name = "happybase" %}
-{%set version = "0.9" %}
+{%set version = "1.0.0" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "744e342936f6c9e384b203435c38ff21a339626a0d7c11aa177988b5e164ef2a" %}
-{%set build_num = "1" %}
+{%set hash_val = "cee5f62735c6ba95c8f842decfd23bab5a07bc16cd0c5374f7461c975d4c608c" %}
+{%set build_num = "0" %}
 
 package:
   name: {{ name|lower }}
@@ -27,7 +27,8 @@ requirements:
 
   run:
     - python
-    - thrift >=0.8.0
+    - six
+    - thriftpy >=0.3.8
 
 test:
   imports:
