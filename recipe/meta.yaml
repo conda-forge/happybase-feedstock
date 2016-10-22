@@ -3,7 +3,7 @@
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
 {%set hash_val = "cee5f62735c6ba95c8f842decfd23bab5a07bc16cd0c5374f7461c975d4c608c" %}
-{%set build_num = "0" %}
+{%set build_num = "1" %}
 
 package:
   name: {{ name|lower }}
@@ -15,8 +15,6 @@ source:
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  skip: True  # [py3k]
-
   number: {{ build_num }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
@@ -27,6 +25,7 @@ requirements:
 
   run:
     - python
+    - setuptools
     - six
     - thriftpy >=0.3.8
 
