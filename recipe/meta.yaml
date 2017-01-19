@@ -35,7 +35,7 @@ test:
 
 about:
   home: https://github.com/wbolster/happybase
-  license: MIT License
+  license: MIT
   license_file: LICENSE.rst
   license_family: MIT
   summary: 'A developer-friendly Python library to interact with Apache HBase'
