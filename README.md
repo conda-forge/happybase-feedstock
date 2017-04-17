@@ -3,7 +3,7 @@ About happybase
 
 Home: https://github.com/wbolster/happybase
 
-Package license: MIT License
+Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
