@@ -15,6 +15,7 @@ source:
 build:
   number: 1002
   script: "{{ PYTHON }} -m pip install . -vvv"
+  skip: true  # [py>36]
 
 requirements:
   build:
