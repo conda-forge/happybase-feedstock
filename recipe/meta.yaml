@@ -1,9 +1,7 @@
-{%set name = "happybase" %}
-{%set version = "1.1.0" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "e20376e2e32291798d2226502994134c1c4e175136d8375b3c517a234fa22481" %}
-{%set build_num = "2" %}
+{% set name = "happybase" %}
+{% set version = "1.1.0" %}
+{% set compress_type = "tar.gz" %}
+{% set sha256 = "e20376e2e32291798d2226502994134c1c4e175136d8375b3c517a234fa22481" %}
 
 package:
   name: {{ name|lower }}
@@ -12,17 +10,21 @@ package:
 source:
   fn: {{ name }}-{{ version }}.{{ compress_type }}
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  sha256: {{ sha256 }}
 
 build:
-  number: {{ build_num }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1002
+  script: "{{ PYTHON }} -m pip install . -vvv"
+  skip: true  # [py>36]
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - python
-    - setuptools
-
+    - pip
+    - thriftpy >=0.3.8
   run:
     - python
     - setuptools
