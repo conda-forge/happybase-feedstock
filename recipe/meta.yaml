@@ -1,7 +1,7 @@
 {% set name = "happybase" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 {% set compress_type = "tar.gz" %}
-{% set sha256 = "e20376e2e32291798d2226502994134c1c4e175136d8375b3c517a234fa22481" %}
+{% set sha256 = "850b4ee651128588a57e1e152dd1252e5ec39776a5d3d14ee892b8bac0fa9e1a" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1002
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vvv"
   skip: true  # [py>36]
 
