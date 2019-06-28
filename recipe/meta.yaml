@@ -29,7 +29,7 @@ requirements:
     - python
     - setuptools
     - six
-    - thriftpy >=0.3.8
+    - thriftpy2
 
 test:
   imports:
