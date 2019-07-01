@@ -14,9 +14,15 @@ Summary: A developer-friendly Python library to interact with Apache HBase
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/happybase-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/happybase-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/happybase-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/happybase-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/happybase-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/happybase-feedstock/branch/master)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3001&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/happybase-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -49,6 +55,8 @@ conda search happybase --channel conda-forge
 
 About conda-forge
 =================
+
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -104,3 +112,9 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@pmlandwehr](https://github.com/pmlandwehr/)
+

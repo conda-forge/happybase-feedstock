@@ -1,35 +1,29 @@
 {% set name = "happybase" %}
-{% set version = "1.1.0" %}
-{% set compress_type = "tar.gz" %}
-{% set sha256 = "e20376e2e32291798d2226502994134c1c4e175136d8375b3c517a234fa22481" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  sha256: {{ sha256 }}
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 850b4ee651128588a57e1e152dd1252e5ec39776a5d3d14ee892b8bac0fa9e1a
 
 build:
-  number: 1002
+  number: 0
+  noarch: python
   script: "{{ PYTHON }} -m pip install . -vvv"
-  skip: true  # [py>36]
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
   host:
     - python
     - pip
-    - thriftpy >=0.3.8
   run:
     - python
     - setuptools
     - six
-    - thriftpy >=0.3.8
+    - thriftpy2
 
 test:
   imports:
@@ -47,3 +41,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - xhochy
